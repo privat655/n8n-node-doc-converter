@@ -1,0 +1,85 @@
+{
+  "name": "n8n-node-doc-converter",
+  "version": "0.1.0",
+  "private": false,
+  "packageManager": "npm@11.5.1",
+  "description": "n8n community node to convert documents to JSON or text.",
+  "main": "dist/FileToJsonNode.node.js",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "dist/**/*.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').cpSync('src/icon.svg','dist/icon.svg')\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist coverage",
+    "prepack": "npm run build",
+    "release": "npm publish --provenance --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/privat655/n8n-node-doc-converter.git"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "document-converter",
+    "doc-converter",
+    "file-converter",
+    "pdf",
+    "excel",
+    "word",
+    "powerpoint",
+    "csv",
+    "xml",
+    "yml",
+    "html",
+    "markdown"
+  ],
+  "author": "privat655",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/privat655/n8n-node-doc-converter/issues"
+  },
+  "homepage": "https://github.com/privat655/n8n-node-doc-converter#readme",
+  "dependencies": {
+    "chardet": "^2.1.1",
+    "fast-xml-parser": "^5.3.4",
+    "file-type": "16.5.4",
+    "mammoth": "^1.11.0",
+    "node-html-markdown": "^2.0.0",
+    "node-html-parser": "^7.0.2",
+    "officeparser": "^6.0.4",
+    "papaparse": "^5.5.3",
+    "read-excel-file": "^6.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@types/node": "^22.15.29",
+    "@types/papaparse": "^5.5.2",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "n8n-workflow": "^2.7.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=22.14.0 <23",
+    "npm": ">=11.5.1"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/FileToJsonNode.node.js"
+    ]
+  }
+}
